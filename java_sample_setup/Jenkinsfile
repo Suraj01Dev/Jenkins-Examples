@@ -1,0 +1,13 @@
+pipeline{
+    agent{
+        label "jenkins-ssh-agent"
+
+    }
+    stages{
+        stage("Git Checkout"){
+            steps{
+                git credentialsId: "github" url:""
+            }
+        }
+    }
+}
