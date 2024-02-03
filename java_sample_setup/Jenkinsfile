@@ -5,9 +5,13 @@ pipeline{
     }
     stages{
         stage("Git Checkout"){
-            steps{
-                git branch: "master" credentialsId: "github" url:"https://github.com/Suraj01Dev/Jenkins-Examples/tree/master/java_sample_setup"
-            }
+                steps {
+                    git credentialsId: 'github', url: 'https://github.com/Suraj01Dev/Jenkins-Examples/tree/master/java_sample_setup', branch: '${BRANCH_NAME}'
+                    sh 'mvn --version'
+                    sh 'mvn clean install'
+                    }
         }
     }
 }
+
+
