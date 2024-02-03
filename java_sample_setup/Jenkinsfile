@@ -6,7 +6,7 @@ pipeline{
     stages{
         stage("Git Checkout"){
             steps{
-                git credentialsId: "github" url:"https://github.com/Suraj01Dev/Jenkins-Examples/tree/master/java_sample_setup"
+                git branch: "master" credentialsId: "github" url:"https://github.com/Suraj01Dev/Jenkins-Examples/tree/master/java_sample_setup"
             }
         }
     }
